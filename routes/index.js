@@ -2,6 +2,6 @@ const { index } = require("../controllers");
 
 const routes = require('express').Router();
 
-routes.use('/', index);
+routes.get('/', index);
 
 module.exports = routes;
