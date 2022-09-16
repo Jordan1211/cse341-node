@@ -1,5 +1,9 @@
 const {MongoClient} = require('mongodb');
 
+const { config } = require('dotenv');
+config();
+const MONGODB_URI = process.env.MONGODB_URI;
+
 async function main() {
 
     const uri = MONGODB_URI;
@@ -20,7 +24,7 @@ async function main() {
 main().catch(console.error);
 
 async function listDatabases(client) {
-    const databasesList = client.db().admin().listDatabases();
+    const databasesList = await client.db().admin().listDatabases();
 
     console.log("Databases:");
     databasesList.databases.forEach(db => {
