@@ -1,9 +1,7 @@
-const { index } = require("../controllers/index");
+const { index } = require("../controllers");
 
-const routes = (router) => {
-    router.use("/", index);
+const routes = require('express').Router();
 
-    return router;
-};
+routes.use('/', index);
 
 module.exports = routes;
