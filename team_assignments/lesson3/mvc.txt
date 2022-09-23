@@ -1,0 +1,22 @@
+Hello Everyone,
+I wanted to share a little about the MVC, or Model View Controller method, and a bit more information about the different 
+options out there for design methods. Some alternative methods will include the following:
+•	Model View Presenter,
+o	Supervising Controller
+o	Passive View
+•	Model View ViewModel
+•	Model View Controller (MVC)
+There are a lot of methods that ca n be applied to setting up architecture that will help you manage your applications. 
+I have found MVC to be my favorite so far, I haven’t had a lot of experience with the others, but have noticed that the majority of colleges (ones in Utah currently) teach this methodology because it simplifies the way you build applications into 3 main points, Model (what schema layout you’ll have) View (the User Interface), and the Controller ( this acts as an interface to allow the controller and the model to interact with the user. I think of the controller as how you handle the logic).
+
+So, what’s the difference between all these?
+The MVP approach goes into changing the from the controller method and uses the presenter to act upon the model and view portion to retrieve data from the repositories (the model) and then formats it in the view. That is different where the controller in MVC is similar but acts more like a gateway to create a gateway for logic to be passed between the model and the view.
+The MVVM (Model View ViewModel), the model is the real state content or data is accessed and encapsulated. The view is important for laying out the style, format and presentation of the data, interactions and data.
+The ViewModel is a way for properties and commands to bind data to and notify the state of any changes. It will handle and offer more to the user interface from the model and determines how the functionality might be displayed.
+
+Now there are so many more options out there, although with these two other options they give good points of view that there are a lot of other options outside of MVC, personally I feel that the reason we use MVC is because it builds a simple understanding of how to go about building architecture for software and how to manage that data and the display. I have provided some of the links that helped me understand more about the MVC, MVVM, and MVP.
+
+https://learn.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
+https://stackoverflow.com/questions/141912/alternatives-to-the-mvc
+https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm
