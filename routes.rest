@@ -1,3 +1,4 @@
+/////////////////////////////////////////////////////// WEEK 1
 //LOCALHOST WEEK 1
 ### Local app
 GET http://localhost:8000
@@ -5,6 +6,7 @@ GET http://localhost:8000
 ###  Test app through render
 GET https://real-name.onrender.com
 
+/////////////////////////////////////////////////////// WEEK 2
 //LOCALHOST WEEK 2 FOR CONTACTS
 ###  Test app through render
 GET http://localhost:8000/contacts
@@ -12,3 +14,11 @@ GET http://localhost:8000/contacts
 //LOCALHOST WEEK 2 CONTACTS 1 CONTACT BY ID
 ###  Test app through render
 GET http://localhost:8000/contacts/6328a2abad12097a5eac8ee0
+
+//PRODUCTION WEEK 2 FOR CONTACTS
+###  Test app through render
+GET https://real-name.onrender.com/contacts
+
+//PRODUCTION WEEK 2 CONTACTS 1 CONTACT BY ID
+###  Test app through render
+GET https://real-name.onrender.com/contacts/6328a2abad12097a5eac8ee0
