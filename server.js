@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongodb = require('./db/connect');
 const contactsRoute = require("./routes/contacts");
+const indexRoute = require("./routes/index");
 const port = process.env.PORT;
 const app = express();
 const bodyparser = require('body-parser');
@@ -13,7 +14,8 @@ app
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
   })
-  .use("/contacts", contactsRoute);
+  .use("/contacts", contactsRoute)
+  .use(indexRoute);
 
 mongodb.initDb((err) => {
   if (err) {

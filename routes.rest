@@ -1,8 +1,14 @@
-//LOCALHOST
+//LOCALHOST WEEK 1
 ### Local app
-GET http://localhost:3000
-
-
-//PRODUCTION
+GET http://localhost:8000
+//PRODUCTION WEEK 1
 ###  Test app through render
 GET https://real-name.onrender.com
+
+//LOCALHOST WEEK 2 FOR CONTACTS
+###  Test app through render
+GET http://localhost:8000/contacts
+
+//LOCALHOST WEEK 2 CONTACTS 1 CONTACT BY ID
+###  Test app through render
+GET http://localhost:8000/contacts/6328a2abad12097a5eac8ee0

@@ -1,7 +1,5 @@
-// const { index } = require("../controllers");
+const { index } = require("../controllers");
+const routes = require('express').Router();
 
-// const routes = require('express').Router();
-
-// routes.get('/', index);
-
-// module.exports = routes;
+routes.get('/', index);
+module.exports = routes;
