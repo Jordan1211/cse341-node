@@ -31,6 +31,7 @@ const createNewContact = async (req,res) => {
 });
 
 try{
+  console.log("The contact was created under this id - "+ req.body.id);
     res.setHeader('Content-Type', 'application/json');
     res.status(201).json(result); 
   }catch(err){
@@ -40,31 +41,35 @@ try{
 };
 
 
-//////////////////////////////// PUT 204
 const updateById = async (req, res, next) => {
-  const result = await mongodb.getDb().db('contacts').collection('contacts').updateOne({_id: ObjectId(req.params.id)}, { $set: ObjectId(req.params.update) });
+
+  const result = await mongodb.getDb().db('contacts').collection('contacts').updateOne({ _id: ObjectId(req.body.id)}, { $set: {
+    favoriteColor: req.body.favoriteColor}});
     
-    if(error) {
-      return res.status(500).send(error);
-    }
-  
+  try{
+    console.log("Your update has been successful");
     res.setHeader('Content-Type', 'application/json');
     res.status(204).json(result); 
-    res.body("Your update has been successful").json(result); 
+
+  }catch(err){
+    res.json({message:err +""});
+  }
 };
 
 
 
-//////////////////////////////// DELETE 200
-// async function deleteListingByName(client, nameOfListing) {
-//   const result = await client.db("sample_airbnb").collection("listingsAndReviews").deleteOne({ name: nameOfListing});
-//   console.log(`${result.deletedCount} document(s) was/were deleted`);
-// }
-const deleteById = async (req, res, next) => {
-  const result = await mongodb.getDb().db('contacts').collection('contacts').deleteOne({_id: ObjectId(req.params.id)});
+const deleteById = async (req, res) => {
+  
+  const result = await mongodb.getDb().db('contacts').collection('contacts').deleteOne({ _id : ObjectId(req.body.id)});
+
+  try{
+  console.log("The contact with id# "+ req.body.id + " was Deleted");
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result); 
-    res.body("You have successfully deleted the record").json(result); 
+
+  }catch(err){
+    res.json({message:err +""});
+  }
 };
 
 module.exports = {
