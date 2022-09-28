@@ -65,11 +65,7 @@ const updateById = async (req, res, next) => {
       );
     console.log('Your update has been successful');
     res.setHeader('Content-Type', 'application/json');
-    res
-      .status(204)
-      .json(
-        'Update Successful the new favorite color is ' + res.body.favoriteColor
-      );
+    res.status(204).json(result);
   } catch (err) {
     res.json({ message: err });
   }
@@ -86,7 +82,21 @@ const deleteById = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (err) {
-    res.json({ message: err });
+    res.json({ message: err + '' });
+  }
+};
+
+const deleteManyByName = async (req, res) => {
+  try {
+    const result = await mongodb
+      .getDb()
+      .db('contacts')
+      .collection('contacts')
+      .deleteMany({ firstName: req.body.firstName });
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(result);
+  } catch (err) {
+    res.json({ message: err + '' });
   }
 };
 
@@ -97,4 +107,5 @@ module.exports = {
   createNewContact,
   updateById,
   deleteById,
+  deleteManyByName,
 };
