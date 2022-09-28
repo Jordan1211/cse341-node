@@ -1,4 +1,4 @@
-const { index } = require("../controllers");
+const { index } = require('../controllers');
 const routes = require('express').Router();
 
 routes.get('/', index);

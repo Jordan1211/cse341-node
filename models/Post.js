@@ -1,27 +1,26 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const PostSchema = mongoose.Schema({
-
   firstName: {
     type: String,
-    required: true
-},
+    required: true,
+  },
   lastName: {
     type: String,
-    required: true
-},
+    required: true,
+  },
   email: {
     type: String,
-    required: true
-},
+    required: true,
+  },
   favoriteColor: {
     type: String,
-    required: true
-},
+    required: true,
+  },
   birthday: {
     type: Date,
-    required: true
-}
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('contacts', PostSchema);

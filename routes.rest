@@ -21,6 +21,37 @@ GET https://real-name.onrender.com/contacts
 
 //PRODUCTION WEEK 2 CONTACTS 1 CONTACT BY ID
 ###  Test app through render
-GET https://real-name.onrender.com/contacts/6328a2abad12097a5eac8ee0
+GET https://real-name.onrender.com/contacts/6328a3a5ad12097a5eac8ee2
 
 /////////////////////////////////////////////////////// WEEK 3
+
+//PRODUCTION WEEK 3 POST FOR CONTACTS
+###  Test app through render
+POST https://real-name.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Contact",
+  "email": "tc@gmail.com",
+  "favoriteColor": "red",
+  "birthday": "2099-12-31"
+}
+
+//PRODUCTION WEEK 3 PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
+###  Test app through render
+PUT https://real-name.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "id": "6333a8e5768f671b85dba17d",
+    "favoriteColor": "blue"
+}
+
+//PRODUCTION WEEK 3 DELETE FOR CONTACTS
+###  Test app through render
+DELETE  https://real-name.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "id": "63339d80db395883cc0edab3"}
