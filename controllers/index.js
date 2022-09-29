@@ -41,7 +41,7 @@ const createNewContact = async (req, res) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday,
       });
-    console.log('The contact was created under this id - ' + req.body.id);
+    console.log('The contact was created');
     res.setHeader('Content-Type', 'application/json');
     res.status(201).json(result);
   } catch (err) {
@@ -78,11 +78,11 @@ const deleteById = async (req, res) => {
       .db('contacts')
       .collection('contacts')
       .deleteOne({ _id: ObjectId(req.body.id) });
-    console.log('The contact with id# ' + req.body.id + ' was Deleted');
+    console.log('The contact was Deleted');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (err) {
-    res.json({ message: err + '' });
+    res.json({ message: err });
   }
 };
 
