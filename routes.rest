@@ -84,7 +84,7 @@ PUT https://real-name.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "id": "633631b1a0b4d796c115d10e",
+    "id": "6336340fa0b4d796c115d10f",
     "favoriteColor": "blue"
 }
 
@@ -94,4 +94,4 @@ DELETE  https://real-name.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "id": "633631b1a0b4d796c115d10e"}
+    "id": "6336340fa0b4d796c115d10f"}
