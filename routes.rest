@@ -5,7 +5,7 @@
 GET http://localhost:8000
 
 //PRODUCTION
-###  Test app through render
+###  App through render
 GET https://real-name.onrender.com
 
 /////////////////////////////////////////////////////// WEEK 2
@@ -13,28 +13,28 @@ GET https://real-name.onrender.com
 //*****************LOCAL***************** 
 
   //LIST CONTACTS
-###  Test app through render
+###  Local app
 GET http://localhost:8000/contacts
 
   //CONTACTS 1 CONTACT BY ID
-###  Test app through render
+###  Local app
 GET http://localhost:8000/contacts/6328a2abad12097a5eac8ee0
 
 //*****************PRODUCTION***************** 
 
   //CONTACTS 1 CONTACT BY ID
-###  Test app through render
+###  App through render
 GET https://real-name.onrender.com/contacts
 
   //CONTACTS 1 CONTACT BY ID
-###  Test app through render
+###  App through render
 GET https://real-name.onrender.com/contacts/6328a3a5ad12097a5eac8ee2
 
 /////////////////////////////////////////////////////// WEEK 3
 
 //*****************LOCAL***************** 
   //POST FOR CONTACTS
-###  Test app through render
+###  Local app
 POST https://localhost:8000.com/contacts
 Content-Type: application/json
 
@@ -47,7 +47,7 @@ Content-Type: application/json
 }
 
   //PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
-###  Test app through render
+###  Local app
 PUT https://localhost:8000.com/contacts
 Content-Type: application/json
 
@@ -57,7 +57,7 @@ Content-Type: application/json
 }
 
   //DELETE FOR CONTACTS
-###  Test app through render
+###  Local app
 DELETE  https://localhost:8000.com/contacts
 Content-Type: application/json
 
@@ -66,7 +66,7 @@ Content-Type: application/json
 
 //*****************PRODUCTION***************** 
   //POST FOR CONTACTS
-###  Test app through render
+###  App through render
 POST https://real-name.onrender.com/contacts
 Content-Type: application/json
 
@@ -79,19 +79,19 @@ Content-Type: application/json
 }
 
   //PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
-###  Test app through render
+###  App through render
 PUT https://real-name.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "id": "6333a8e5768f671b85dba17d",
+    "id": "633631b1a0b4d796c115d10e",
     "favoriteColor": "blue"
 }
 
   //DELETE FOR CONTACTS
-###  Test app through render
+###  App through render
 DELETE  https://real-name.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "id": "63339d80db395883cc0edab3"}
+    "id": "633631b1a0b4d796c115d10e"}
