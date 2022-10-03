@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/": {
+    "/contacts/": {
       "get": {
         "description": "",
         "produces": [
@@ -121,7 +121,7 @@
         }
       }
     },
-    "/{id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -142,7 +142,7 @@
         }
       }
     },
-    "/deleteMany": {
+    "/contacts/deleteMany": {
       "delete": {
         "description": "",
         "produces": [
@@ -162,6 +162,17 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
