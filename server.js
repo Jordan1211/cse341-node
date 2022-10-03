@@ -9,7 +9,11 @@ const app = express();
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 app
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyparser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
