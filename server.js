@@ -16,6 +16,8 @@ const swaggerDocument = require('./swagger.json');
 app
   .use(bodyparser.json())
   .use(cors())
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  .use('/contacts', contactsRoute)
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
@@ -26,8 +28,7 @@ app
     res.setHeader('Access-Control-Allow_methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
   })
-  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-  .use('/contacts', contactsRoute)
+
   .use(indexRoute);
 
 mongodb.initDb((err) => {
