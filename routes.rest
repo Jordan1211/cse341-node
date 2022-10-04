@@ -97,4 +97,4 @@ GET http://localhost:8000/api-docs
 //*****************PRODUCTION***************** 
   //GET FOR API DOCS
 ###  App through render
-GET https://contacts-api.onrender.com/api-docs/
+GET https://contacts-api.onrender.com/api-docs
