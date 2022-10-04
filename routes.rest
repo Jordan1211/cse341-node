@@ -6,7 +6,7 @@ GET http://localhost:8000
 
 //PRODUCTION
 ###  App through render
-GET https://real-name.onrender.com
+GET https://contacts-api.onrender.com
 
 /////////////////////////////////////////////////////// WEEK 2
 
@@ -24,11 +24,11 @@ GET http://localhost:8000/contacts/6328a2abad12097a5eac8ee0
 
   //CONTACTS 1 CONTACT BY ID
 ###  App through render
-GET https://real-name.onrender.com/contacts
+GET https://contacts-api.onrender.com/contacts
 
   //CONTACTS 1 CONTACT BY ID
 ###  App through render
-GET https://real-name.onrender.com/contacts/6328a3a5ad12097a5eac8ee2
+GET https://contacts-api.onrender.com/contacts/6328a3a5ad12097a5eac8ee2
 
 /////////////////////////////////////////////////////// WEEK 3
 
@@ -67,7 +67,7 @@ Content-Type: application/json
 //*****************PRODUCTION***************** 
   //POST FOR CONTACTS
 ###  App through render
-POST https://real-name.onrender.com/contacts
+POST https://contacts-api.onrender.com/contacts
 Content-Type: application/json
 
 {
@@ -80,7 +80,7 @@ Content-Type: application/json
 
   //PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
 ###  App through render
-PUT https://real-name.onrender.com/contacts
+PUT https://contacts-api.onrender.com/contacts
 Content-Type: application/json
 
 {
@@ -90,11 +90,11 @@ Content-Type: application/json
 
   //DELETE FOR CONTACTS
 ###  App through render
-DELETE  https://real-name.onrender.com/contacts
+DELETE  https://contacts-api.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "id": "6336340fa0b4d796c115d10f"}
+    "id": "633c448b6f13fdf07f8ae537"}
 
 /////////////////////////////////////////////////////// WEEK 3
 

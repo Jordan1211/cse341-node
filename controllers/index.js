@@ -1,4 +1,4 @@
-const index = (req, res) => {
+const index = (req, res, next) => {
   res.send('Harrison Ford Gresham');
 };
 
@@ -6,7 +6,7 @@ const mongodb = require('../db/connect');
 const { ObjectId } = require('mongodb');
 // const Post = require('../models/Post');
 
-const getData = async (req, res) => {
+const getData = async (req, res, next) => {
   const result = await mongodb.getDb().db('contacts').collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -14,7 +14,7 @@ const getData = async (req, res) => {
   });
 };
 
-const getDataById = async (req, res) => {
+const getDataById = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db('contacts')
@@ -24,7 +24,7 @@ const getDataById = async (req, res) => {
   res.status(200).json(result);
 };
 
-const createNewContact = async (req, res) => {
+const createNewContact = async (req, res, next) => {
   try {
     const result = await mongodb.getDb().db('contacts').collection('contacts').insertOne({
       firstName: req.body.firstName,
@@ -41,7 +41,7 @@ const createNewContact = async (req, res) => {
   }
 };
 
-const updateById = async (req, res) => {
+const updateById = async (req, res, next) => {
   try {
     const result = await mongodb
       .getDb()
@@ -63,7 +63,7 @@ const updateById = async (req, res) => {
   }
 };
 
-const deleteById = async (req, res) => {
+const deleteById = async (req, res, next) => {
   try {
     const result = await mongodb
       .getDb()
@@ -78,7 +78,7 @@ const deleteById = async (req, res) => {
   }
 };
 
-const deleteManyByName = async (req, res) => {
+const deleteManyByName = async (req, res, next) => {
   try {
     const result = await mongodb
       .getDb()
