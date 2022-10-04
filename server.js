@@ -18,6 +18,11 @@ app
   .use(cors())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+    );
+    res.setHeader('Access-Control-Allow_methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
   })
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))

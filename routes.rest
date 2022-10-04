@@ -18,7 +18,7 @@ GET http://localhost:8000/contacts
 
   //CONTACTS 1 CONTACT BY ID
 ###  Local app
-GET http://localhost:8000/contacts/633c5ab23ebb8870b898f3f2
+GET http://localhost:8000/contacts/6328a3caad12097a5eac8ee3
 
 //*****************PRODUCTION***************** 
 
@@ -35,7 +35,7 @@ GET https://contacts-api.onrender.com/contacts/6328a3a5ad12097a5eac8ee2
 //*****************LOCAL***************** 
   //POST FOR CONTACTS
 ###  Local app
-POST http://localhost:8000.com/contacts
+POST http://localhost:8000/contacts
 Content-Type: application/json
 
 {
@@ -48,17 +48,16 @@ Content-Type: application/json
 
   //PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
 ###  Local app
-PUT http://localhost:8000.com/contacts
+PUT http://localhost:8000/contacts/633c651a569f9cadc8b5ced1
 Content-Type: application/json
 
 {
-    "id": "6333a8e5768f671b85dba17d",
     "favoriteColor": "blue"
 }
 
   //DELETE FOR CONTACTS
 ###  Local app
-DELETE  http://localhost:8000/contacts/633c5ab23ebb8870b898f3f2
+DELETE  http://localhost:8000/contacts/633c651a569f9cadc8b5ced1
 
 
 //*****************PRODUCTION***************** 
@@ -77,7 +76,7 @@ Content-Type: application/json
 
   //PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
 ###  App through render
-PUT   http://localhost:8000/contacts/6328a3caad12097a5eac8ee3
+PUT   http://localhost:8000/contacts/633c6565b66c7b40a0018a1d
 Content-Type: application/json
 
 {
@@ -86,11 +85,7 @@ Content-Type: application/json
 
   //DELETE FOR CONTACTS
 ###  App through render
-DELETE  https://contacts-api.onrender.com/contacts
-Content-Type: application/json
-
-{
-    "id": "633c448b6f13fdf07f8ae537"}
+DELETE  https://contacts-api.onrender.com/contacts/633c6565b66c7b40a0018a1d
 
 /////////////////////////////////////////////////////// WEEK 3
 
