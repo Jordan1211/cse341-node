@@ -48,16 +48,16 @@ Content-Type: application/json
 
   //PUT FOR CONTACTS (UPDATE FAVORITE COLOR)
 ###  Local app
-PUT http://localhost:8000/contacts/633c651a569f9cadc8b5ced1
+PUT http://localhost:8000/contacts/633c77a1869464d12dc1bc6e
 Content-Type: application/json
 
 {
-    "favoriteColor": "blue"
+    "favoriteColor": "yellow"
 }
 
   //DELETE FOR CONTACTS
 ###  Local app
-DELETE  http://localhost:8000/contacts/633c651a569f9cadc8b5ced1
+DELETE  http://localhost:8000/contacts/633c77a1869464d12dc1bc6e
 
 
 //*****************PRODUCTION***************** 

@@ -14,7 +14,7 @@ const getData = async (req, res) => {
   });
 };
 
-const getDataById = async (req, res) => {
+const getSingle = async (req, res) => {
   const result = await mongodb
     .getDb()
     .db('contacts')
@@ -37,7 +37,7 @@ const createNewContact = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(201).json(result);
   } catch (err) {
-    res.json({ message: err });
+    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
   }
 };
 
@@ -59,7 +59,7 @@ const updateById = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(204).json(result);
   } catch (err) {
-    res.json({ message: err });
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
   }
 };
 
@@ -74,7 +74,7 @@ const deleteById = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (err) {
-    res.json({ message: err });
+    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
   }
 };
 
@@ -88,14 +88,14 @@ const deleteManyByName = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (err) {
-    res.json({ message: err + '' });
+    res.status(500).json(response.error || 'Some error occurred while deleting the many contacts.');
   }
 };
 
 module.exports = {
   index,
   getData,
-  getDataById,
+  getSingle,
   createNewContact,
   updateById,
   deleteById,
