@@ -19,7 +19,7 @@ const getDataById = async (req, res) => {
     .getDb()
     .db('contacts')
     .collection('contacts')
-    .findOne({ _id: ObjectId(req.params.id) });
+    .findOne({ _id: ObjectId(req.params._id) });
   res.setHeader('Content-Type', 'application/json');
   res.status(200).json(result);
 };
@@ -48,7 +48,7 @@ const updateById = async (req, res) => {
       .db('contacts')
       .collection('contacts')
       .updateOne(
-        { _id: ObjectId(req.params.id) },
+        { _id: ObjectId(req.params._id) },
         {
           $set: {
             favoriteColor: req.body.favoriteColor
@@ -69,7 +69,7 @@ const deleteById = async (req, res) => {
       .getDb()
       .db('contacts')
       .collection('contacts')
-      .deleteOne({ _id: ObjectId(req.params.id) });
+      .deleteOne({ _id: ObjectId(req.params._id) });
     console.log('The contact was Deleted');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
