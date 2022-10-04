@@ -7,7 +7,7 @@ const indexRoute = require('./routes/index');
 const port = process.env.PORT;
 const app = express();
 const bodyparser = require('body-parser');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
