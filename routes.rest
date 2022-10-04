@@ -101,9 +101,9 @@ Content-Type: application/json
 //*****************LOCAL***************** 
   //GET FOR API DOCS
 ###  Local app
-GET http://localhost:8000/contacts/api-docs
+GET http://localhost:8000/api-docs
 
 //*****************PRODUCTION***************** 
   //GET FOR API DOCS
 ###  App through render
-GET https://real-name.onrender.com/contacts/api-docs
+GET https://real-name.onrender.com/api-docs
