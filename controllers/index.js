@@ -1,4 +1,4 @@
-const index = (req, res, next) => {
+const index = (req, res) => {
   res.send('Harrison Ford Gresham');
 };
 
@@ -6,7 +6,7 @@ const mongodb = require('../db/connect');
 const { ObjectId } = require('mongodb');
 // const Post = require('../models/Post');
 
-const getData = async (req, res, next) => {
+const getData = async (req, res) => {
   const result = await mongodb.getDb().db('contacts').collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -14,7 +14,7 @@ const getData = async (req, res, next) => {
   });
 };
 
-const getDataById = async (req, res, next) => {
+const getDataById = async (req, res) => {
   const result = await mongodb
     .getDb()
     .db('contacts')
@@ -24,7 +24,7 @@ const getDataById = async (req, res, next) => {
   res.status(200).json(result);
 };
 
-const createNewContact = async (req, res, next) => {
+const createNewContact = async (req, res) => {
   try {
     const result = await mongodb.getDb().db('contacts').collection('contacts').insertOne({
       firstName: req.body.firstName,
@@ -41,14 +41,14 @@ const createNewContact = async (req, res, next) => {
   }
 };
 
-const updateById = async (req, res, next) => {
+const updateById = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()
       .db('contacts')
       .collection('contacts')
       .updateOne(
-        { _id: ObjectId(req.body.id) },
+        { _id: ObjectId(req.params.id) },
         {
           $set: {
             favoriteColor: req.body.favoriteColor
@@ -63,13 +63,13 @@ const updateById = async (req, res, next) => {
   }
 };
 
-const deleteById = async (req, res, next) => {
+const deleteById = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()
       .db('contacts')
       .collection('contacts')
-      .deleteOne({ _id: ObjectId(req.body.id) });
+      .deleteOne({ _id: ObjectId(req.params.id) });
     console.log('The contact was Deleted');
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
@@ -78,7 +78,7 @@ const deleteById = async (req, res, next) => {
   }
 };
 
-const deleteManyByName = async (req, res, next) => {
+const deleteManyByName = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()

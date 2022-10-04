@@ -7,9 +7,9 @@ router.get('/:id', controller.getDataById);
 
 router.post('/', controller.createNewContact);
 
-router.put('/', controller.updateById);
+router.put('/:id', controller.updateById);
 
-router.delete('/', controller.deleteById);
+router.delete('/:id', controller.deleteById);
 router.delete('/deleteMany', controller.deleteManyByName);
 
 module.exports = router;
