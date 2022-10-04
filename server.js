@@ -13,14 +13,14 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 app
-  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyparser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   })
   .use('/contacts', contactsRoute)
-  .use(indexRoute);
+  .use(indexRoute)
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 mongodb.initDb((err) => {
   if (err) {
