@@ -35,7 +35,7 @@ const createNewContact = async (req, res) => {
     });
     console.log('The contact was created');
     res.setHeader('Content-Type', 'application/json');
-    res.status(201).json(result);
+    res.status(201).json(result.insertedId);
   } catch (err) {
     res.status(500).json(response.error || 'Some error occurred while creating the contact.');
   }
