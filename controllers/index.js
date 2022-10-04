@@ -4,9 +4,9 @@ const index = (req, res) => {
 
 const mongodb = require('../db/connect');
 const { ObjectId } = require('mongodb');
-const Post = require('../models/Post');
+// const Post = require('../models/Post');
 
-const getData = async (req, res, next) => {
+const getData = async (req, res) => {
   const result = await mongodb.getDb().db('contacts').collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -14,7 +14,7 @@ const getData = async (req, res, next) => {
   });
 };
 
-const getDataById = async (req, res, next) => {
+const getDataById = async (req, res) => {
   const result = await mongodb
     .getDb()
     .db('contacts')
@@ -41,7 +41,7 @@ const createNewContact = async (req, res) => {
   }
 };
 
-const updateById = async (req, res, next) => {
+const updateById = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()

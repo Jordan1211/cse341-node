@@ -16,7 +16,7 @@ exports.create = (req, res) => {
     temple_id: req.body.temple_id,
     name: req.body.name,
     description: req.body.description,
-    location: req.body.location,
+    location: req.body.location
   });
   // Save Temple in the database
   temple
@@ -26,8 +26,7 @@ exports.create = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || 'Some error occurred while creating the Temple.',
+        message: err.message || 'Some error occurred while creating the Temple.'
       });
     });
 };
@@ -43,7 +42,7 @@ exports.findAll = (req, res) => {
         location: 1,
         dedicated: 1,
         additionalInfo: 1,
-        _id: 0,
+        _id: 0
       }
     )
       .then((data) => {
@@ -51,8 +50,7 @@ exports.findAll = (req, res) => {
       })
       .catch((err) => {
         res.status(500).send({
-          message:
-            err.message || 'Some error occurred while retrieving temples.',
+          message: err.message || 'Some error occurred while retrieving temples.'
         });
       });
   } else {
@@ -66,15 +64,12 @@ exports.findOne = (req, res) => {
   if (req.header('apiKey') === apiKey) {
     Temple.find({ temple_id: temple_id })
       .then((data) => {
-        if (!data)
-          res
-            .status(404)
-            .send({ message: 'Not found Temple with id ' + temple_id });
+        if (!data) res.status(404).send({ message: 'Not found Temple with id ' + temple_id });
         else res.send(data[0]);
       })
-      .catch((err) => {
+      .catch(() => {
         res.status(500).send({
-          message: 'Error retrieving Temple with temple_id=' + temple_id,
+          message: 'Error retrieving Temple with temple_id=' + temple_id
         });
       });
   } else {
