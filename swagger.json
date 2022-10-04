@@ -65,7 +65,7 @@
         }
       }
     },
-    "/contacts/{_id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -73,7 +73,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -92,7 +92,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -126,7 +126,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
