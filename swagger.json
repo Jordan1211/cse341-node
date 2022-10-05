@@ -5,10 +5,10 @@
     "description": "Contacts API",
     "version": "1.0.0"
   },
-  "host": "https://contacts-api.onrender.com/",
+  "host": "contacts-api.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/contacts/": {
